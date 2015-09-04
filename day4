@@ -1,92 +1,120 @@
+// Welcome to functions! 
+// First things first, make sure to add this file to your index.html file, just like you did yesterday. 
+// Functions are an incredibly important part of JS. They let us follow the programming best practice of being DRY (Don't Repeat Yourself). Whenever we start typing the same thing multiple times, we can probably put that inside a function, making our lives easier, and our code easier to read. 
 
-//Today we're going to get in a bunch of practice with objects.
-//As you start your JS journey, there's a ton of value in just building out the muscle memory for the fundamentals.
-//To get these fundamentals as deeply embedded as possible, type them out new each time. Avoid copying code, as you're just ignoring a chance to get in more useful practice.
+// Let's ease into this. 
+// 1. Let's a function called speak that takes in a single parameter called item, and logs that item to the console.
+  var speak = function(item) {
+    //console.log('item is set equal to what the user passed into us:', 'item');
+  }
+  //console.log(speak(1));
+  // Which part of this is the function body? 
+  // What is the parameter name?
+  // Is this function a return value function, or a side effect function?
+  // What happens if we change console.log(item) to have quotes around item, like console.log('item') ?
+  // What you should be noticing is that item is simply a variable that is set equal to what the user gives us. And that you can/should be console.logging it to verify what it is. 
+// 2. Now let's change the parameter name from item to val. 
+  // Repeat what we did in #1, passing in a variety of values just to verify that what the user passes in to us is stored into val. 
+  var speak = function(val) {''
+    //console.log('item is set equal to what the user passed into us:', val);
+  }
+  //speak("Hi");
+// A function is just a block of code that we've created but not run yet. 
+// 3. Create a function called climbHalfDome, that just console.logs "Yay, congrats on climbing such an awesome rock!". Do not invoke this function. Notice how we never see that show up in our console, because the interpreter doesn't ever get inside the function body until we invoke that function. 
+var climbHalfDome = function() {
+  //console.log("Yay, congrats on climbing such an awesome rock!", val);
+}
+climbHalfDome();
+// 4. Inside of climbHalfDome, console.log variables that don't exist. These will throw errors as soon as this function is invoked, but since it isn't invoked yet, JS doesn't give us any errors! 
+// 5. Now invoke the function, and notice that the interpreter only now enters the body of the function to execute the code for the first time, and finds the errors when we invoke it. 
 
-// 1. To start, let's create a variable, mysticalAnimal, and set it equal to an object literal.
+// Just to recap, a function is a set of instructions that we write down and store. It's like driving directions from the airport to your house. And you get to use these directions at your discretion! You can use them immediately, or hand them out to friends when they come to visit, or never use them at all if you decide all of a sudden that you prefer trains. This set of instructions can be invoked many times by many different people with different arguments (type of car, time of day, traffic conditions, etc.). 
+// Much as our for loops are just blocks of code that we get to run once for each item in an array, a function is just a block of code that we get to run once per time that it's invoked. 
+// Whenever you put the open and closed parens () next to a function name, you will invoke that function right there. This seems obvious now, but will trip many of you up later when we get to functional programming (next week, next week!), so remember it. 
 
 
-// Dot Notation:
-// Recall that dot notation takes whatever is to the right of the dot, turns it into a string, and looks up that string as a property name in the object to the left of the dot.
-// Let's use dot notation to add some properties to mysticalAnimal.
-// 2. Add a type property, and set it equal to 'dragon'.
-// 3. Add a name property, and set it equal to 'Leslie'.
-// 4. Add a likes property, and set it equal to an empty array.
-// 5. Add a property called bestFriend, and set it equal to your name.
-// 6. Add in a superPower property. Set it equal to 'gives amazing hugs'.
+// Returns vs. Side Effects
+// A function can work in one of two primary ways: through returned values, or side effects. 
+// Let's explore what this means. 
+// 6. Create a function called add5Return. All it does is take in a single number, and return that number plus 5. Do not put any console.logs inside this function- we're going to play with that part next!
+var add5Return = function(number) {
+  return number + 5;
+};
+add5Return();
+// 7. Invoke add5Return from inside your day4Functions.js file. What do you see in the console?
+  // Answer: nothing! 
+  // What's going on here? 
+  // We're invoking the function, it's running and doing what we want, but we're not doing anything with the results returned from it. 
+  // Try capturing the results of add5Return into a variable, like so:
+  var add5Results = add5Return(10); {
+  console.log(add5Results);
+};
+  //console.log that variable. Now what do you see in your console? 
+  // If you don't do anything with the result a function returns, it will have done all that work, only to hand the results off to nothing, essentially dropping it on the floor since nothing was there to catch it. 
+// 8. Create a variable in the global scope called sideEffectResults, and set it equal to 20.
 
-// Access using dot notation
-// 7. Now try to access all the values you've stored in mysticalAnimal. One at a time (not all at once!), what do you need to do to access the values:
-  // 'dragon'
-  // 'Larry'
-  // []
-  // your own name
-  // 'gives amazing hugs'
-// Hopefully this starts to feel somewhat repetitive- that's awesome! That means that you're learing this super well so far. If it doesn't, try going back and doing it again on your own time.
+var sideEffectResults = 20;
+var add5SideEffect = function() 
+{
+sideEffectResults = sideEffectResults + 5; 
+console.log(sideEffectResults);
+}
+add5SideEffect();
 
 
-// Bracket notation:
-// Recall that we can do two different things with bracket notation:
-  // A. Evaluate a variable or expression, and look up what that variable evalutates to as a property name in the object.
-  // B. Pass in a string (as noted by the quotes surrounding it) and look up that string as a property name in the object.
-// Remember that bracket notation is the ONLY way to look up variables or expressions when using them with objects.
+// 9. Create a variable called add5SideEffect that takes in no parameters, and doesn't return anything. Instead, this function will have a side effect by adding 5 to sideEffectResults. 
+  // Invoke add5SideEffect inside your day4Functions.js file. What do you see in your console? 
+  // Answer: nothing! 
+  // console.log sideEffectResults. Now what do you see in your console? add5SideEffect worked! It had a side effect, in this case changing a variable available in the global scope. 
+  // Out of curiosity, what happens when you try the following line?
+  // var sideEffectReturn = add5SideEffect(); 
+  // What is sideEffectReturn equal to? Well, it's equal to whatever we're returning from invoking add5SideEffect. Which is nothing, right, since we don't have a return statement?
+  // If a function doesn't explicitly return anything with a return statement, JS will help us out by automatically returning undefined for us. All functions therefore return something, even if it's just undefined. 
+// 10. Discuss with your partner what a side effect is vs. a returned value. 
+  // Talk about how we observe the results of each one. 
+  // Talk about what happens when we store (or don't?) the results of a function that has a side effect, vs. what happens when we store the results of a function that has a returned value. 
 
-// 8. Create a variable called newPropertyToAdd, and set it equal to 'food'.
-// 9. Now, using bracket notation and newPropertyToAdd, create a food property on our mysticalAnimal object, and set it equal to 'BBQ'. NOTE: you should not be typing the word food to accomplish this task!
-// 10. Now set newPropertyToAdd equal to 'canFly'.
-// 11. What do you expect to happen when we type in the following line?
-  // mysticalAnimal[newPropertyToAdd] = true;
-  // Think through this with your pair. Then uncomment that line and console.log mysticalAnimal afterwards!
-  // Now let's talk through what just happened:
-    // The JS interpreter reads the line of code from left to right, just as we do.
-    // The first thing it does is encounter the variable mysticalAnimal. It looks up what this variable points to, and finds that it evaluates to an object.
-    // That object is now what the computer holds, as a result of evaluating the variable mysticalAnimal.
-    // Next, it recognizes the brackets. It knows to evaluate whatever comes inside the brackets, and then look up the results of that as a property name on the object.
-    // Next, it encounters the thing inside the brackets. In this case, that thing is a variable. So, it goes off and looks up what that variable is. It finds that variable is equal to the string 'canFly'.
-    // Now, it looks up the string 'canFly' as a property name on our mysticalAnimal object, and returns the value that is stored at that property name, which is the boolean value true in this case.
-  // That's pretty cool that we can pretend to be the machine and explain exactly what it's doing with each character of code that we've written! See, no black magic here. It just follows a set of rules that we've agreed on beforehand.
-// Now, onto point B above of using bracket notation- passing in a string.
+//11. Return values immediately stop the rest of a function from being executed. It's kind of like that function has fulfilled it's destiny, and gets to retire now. Let's test this out. 
+  // Inside one of your previous functions, console.log a variable that doesn't exist before your return statement. Notice how the JS interpreter throws a nasty error. 
+  // Move that error-inducing line until after the return statement. What happens now?
+  // The return statement tells the interpreter that we're done with all the code inside the function body, so the error-inducing code after the return statement never gets executed!
 
-// 12. Using bracket notation still, pass in the string 'collects' inside the brackets, and set it equal to the value 'diamonds and gold and fire extinguishers'.
-// At first glance, this appears to be a different pattern than passing in a variable inside the brackets. But let's revisit the same steps we talked through above, and you'll notice that all we did was make one step simpler for the computer.
-// Now let's talk through what just happened:
-  // The JS interpreter reads the line of code from left to right, just as we do.
-  // The first thing it does is encounter the variable mysticalAnimal. It looks up what this variable points to, and finds that it evaluates to an object.
-  // That object is now what the computer holds, as a result of evaluating the variable mysticalAnimal.
-  // Next, it recognizes the brackets. It knows to evaluate whatever comes inside the brackets, and then look up the results of that as a property name on the object.
-  // Next, it encounters the thing inside the brackets. In this case, that thing is already a string, 'collects'. THIS STEP IS THE ONLY ONE THAT CHANGES AT ALL. When the interpreter goes to evaluate the thing inside the brackets, it recognizes that thing is already a string and that it doesn't have to do any further work on this step. In the previous version, the only differences is that it had to turn the thing inside the brackets into a string by evaluating it as a variable first.
-  // Now, it looks up the string 'collects' as a property name on our mysticalAnimal object, and returns the value that is stored at that property name, which is the string 'diamonds and gold and fire extinguishes' in this case.
+// We can return anything we want from a function! 
+// 12. Let's create a function called superPowerAdder, that does a few things:
+  // A. takes in a single object
+  // B. adds a superPower property with a value of 'JS ninja-ing'
+  // C. Returns that object
+  // Invoke this function inside a for loop that's iterating through the grandCouncil array we created on Tuesday. 
+  // Make sure to ignore the string in that array, and only invoke superPowerAdder on the objects. 
+  // Overwrite each object in the grandCouncil array with the respective results of superPowerAdder
+  // As always, console.log frequently at various steps along the way to make sure your results are what you're expecting them to be!
 
-// At this point, you've gotten great practice setting properties of objects using both dot and bracket notation. Now let's get in some practice accessing those properties and when to use each form of access.
-// HINT: When looking up a string, use dot notation. When looking up a variable, use bracket notation! This is all you need to know 98% of the time.
+// 13. Define a function called animalMaker. This function has three parameters: 
+  // inputType
+  // inputSuperPower
+  // inputCanFly
+  // This function will return an object based on this user input. 
+  // Example results:
+    // var createdAnimal = animalMaker('red panda','being ridiculously cute',false);
+    // console.log(createdAnimal);
+      /*
+      {
+        type: 'red panda',
+        superPower: 'being ridiculously cute',
+        canFly: false,
+        createdBy: 'preston'
+      }
+      */
+    // Notice how each animals will have a createdBy property that will be the same for all of them. But then the rest of the properties are set equal to the inputs the user gives us. 
 
-// 13. Create a variable called thisIsAVariable. Set it equal to the string 'superPower'.
-// Let's use this to play with bracket vs. dot notation.
-// 14. What do you expect to happen when we try the following line? Talk this through with your partner for a minute.
-  // console.log(mysticalAnimal.thisIsAVariable);
-  // The dot notation means that JS is going to try to look for a property name that is exactly the string after the dot- in this case, it's looking for a property called thisIsAVariable in our mysticalAnimal object. And clearly we don't have a property named that, so it will return undefined!
-// 15. Now try using thisIsAVariable using the proper form of access for variables. What do you get this time?
-// 16. And what happens when you put that variable in quotes inside the brackets?
-  // It does the exact same thing as if you had used dot notation- looks it up as a string, not a variable.
 
-// Object Literals:
-// One last practice! So far we've been going through and creating different properties one by one. Let's use object literal notation to do a bunch at once!
-// We can create an object and give it properties all at the same time using object literal notation. An example:
-/*
-  var goalsForTheYear = {
-    cycling: '5000 miles',
-    climbing: '100 days',
-    giving: 'selflessly'
-  };
-*/
-// 17. Create a new variable called mysticalAnimal2, and set it equal to an object literal with the following properties:
-  // type
-  // name
-  // likes
-  // bestFriend
-  // superPower
-  // food
-  // canFly
-  // collects
+// Congrats, you now have a bunch of practice with functions!
+// Let's review for a minute:
+// Functions are just blocks of code, or instructions.
+// We define them and invoke them separately. Putting () next to the function name inokes the function right there.
+// Returning a value from a function is the one direct tunnel you have from within a function to the world outside the function. 
+// return statements immediately end the function invocation.
+// Functions can have side effects, modifying variables outside of the function body. 
+// The parameters we define for a function will be set equal to what the user passes in to us. This part just happens automatically for us! 
 
-// Awesome, by now you should have a pretty good familiarity with objects, bracket and dot notation, object literals, and accessing properties of objects. Feel free to keep exploring more on your own; objects are important things to understand!
+// Next week we'll be putting together everything we learned this week with a bunch of practice! 
