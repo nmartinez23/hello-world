@@ -1,4 +1,4 @@
-// Arrays!
+-// Arrays!
 
 // As with Objects, we're trying to get you enough repetition to the point where this is instinctive. If any of it starts to feel repetitive, that's awesome! To facilitate this, keep writing new code for each exercise; don't copy and paste previous code. Practicing these keystrokes is super valuable.
 
@@ -19,7 +19,9 @@
 // Arrays are 0-indexed. That is, the first thing that you put in there will go in at index 0. So if you have 3 things in your array, they will be at arr[0], arr[1], and arr[2].
 
 // 1. Create an empty array called treasureChest. We're going to fill it with all the things that our dragon from yesterday has hoarded over the years.
-var treasureChest = ['fur jackets'];
+
+  var treasureChest = ['fur jackets'];
+
 // 2. Let's make the value at position 0 'fur jackets'.
 
 // Suddenly, our dragon is either A) attacked by PETA for having animal fur jackets, or B) decides to move somewhere warm. Either way, she's no longer in need of fur jackets.
@@ -84,16 +86,34 @@ var grandCouncil = [];
   // collects- an array with a few things this animal might collect
   // canFly- a boolean (true or false- no strings around it, these are reserved keywords) representing whether this animal can fly or not.
 
-var dinosaur = {};
-dinosaur['type'] = 'dinosaur';
-dinosaur['collects'] = 'grass', 'leaves';
-dinosaur['canFly'] = true;
+var horseBone = {
+  type: 'unicorn',
+  canFly: false
+};
+
+var franz = {
+  type:"garden gnome",
+  canFly: false
+};
+
+var telegraph = {
+  type:"Villain",
+  canFly: true
+};
+
+grandCouncil [grandCouncil.length] = horseBone;
+grandCouncil [1] = franz;
+grandCouncil.push ('open position available');
+
 
 // 13. Now add these onto the end of our grandCouncil array using the three methods outlined above (hard coding in an index position to add it to: arr[3]; utilizing the .length property: arr[arr.length]; push: arr.push(objName) ).
 
 
 
 // 14. Whoops- looks like one of our mysticalAnimals melts too easily in the presence of Leslie the Dragon. Let's overwrite the value stored at the index 2 in our array with the string 'open position available!'. Check what grandCouncil looks like after overwriting this value.
+
+var mysticalAnimal = { 
+  type: 'dragon',                                                                                   name: 'Leslie',                                                                                   likes: [],                                                                                       bestfriend: 'Raphael',                                                                           superpower: 'gives amazing hugs',                                                                 food: 'BBQ',                                                                                     canFly: true,                                                                                     collects: 'diamonds and gold and fire extinguishers' }    
 
 // Congratulations! You've now gotten in a decent bit of practice using arrays and understanding the different ways to add and access values from them.
   // To recap:
