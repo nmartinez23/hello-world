@@ -41,7 +41,7 @@ for (var i =0; i < arr.length; i++) {
 
 for (var i =0; i < arr.length; i++) {
   //console.log(i);
-};
+}
 
   // All i is is a number. Since arrays are numerically indexed, all we need to access the things stored inside them are numbered indices.
   // Put another way, to access 100, 200, and 300 from arr, all we need are the numbers 0, 1, and 2,
@@ -62,7 +62,7 @@ for (var i =0; i < arr.length; i++) {
 
 for (var i = 0; i < arr.length; i++) {
   //console.log(arr[i]);
-};
+}
 
   // Now that you're comfortable accessing each item in arr, let's console log both i and the relevant value stored in arr
     // by writing a new for loop. So what we'd expect to see in our console is:
@@ -148,27 +148,46 @@ for (var key in obj) {
 
 
 for( var key in obj ) {
-  console.log("the value of key is: " + key +  ", the value were accessing in the object is " + obj[key]);
+  //console.log("the value of key is: " + key +  ", the value were accessing in the object is " + obj[key]);
 }
 
 // 8. You should be feeling pretty great about iterating through objects now!
   // So let's combine this with our if statement.
   // Let's only log a value to the console if it equals 'Oakland'.
 
-if (obj[key] === 'Oakland') {
-  console.log
-}
+for( var key in obj ) {
+ if (obj[key] === 'Oakland')
+  console.log(obj[key]);
+} 
 
   // Great! Now, let's create a new for loop for arr. Inside that for loop, let's only console.log a value
     // if it is both greater than 100 and less than 400
     // Remember that we use && for and statements.
   // Inside another for loop for arr, only console.log the values that are either above 400, or less than 200.
+
+//var arr = [100,200,300,400,500];
+//var obj = {
+  //city: 'Oakland',
+  //slingsCode: true,
+  //excitementLevel: 10
+//};
+
+for (var i = 0; i < arr.length; i++) {
+  if (arr[i] > 100 && arr[i] < 400)
+  console.log(arr[i]);
+}
+
+for (var i = 0; i < arr.length; i++) {
+  if (arr[i] > 400 || arr[i] < 200)
+    console.log(arr[i]);
+}
+
     // Remember that we use || for or statements.
 // 9. Now let's combine an if statement with our array for loop.
   // Let's put
-  // if(arr[i]) {
-  //   console.log(arr[i]);
-  // }
+  //if(arr[i]) {
+ //   console.log(arr[i]);
+ //  }
   // inside of our for loop. What do you expect this to log?
   // Remember that JavaScript does type coercion, forcing whatever is in the conditional part of our if(conditional) statement to be a boolean value
   // Let's try this again:
@@ -200,11 +219,11 @@ if (obj[key] === 'Oakland') {
     // Let's show you an example.
     var plusEqualsVar = 5;
     plusEqualsVar += 10;
-    // console.log('plusEqualsVar after += 10 is:',plusEqualsVar);
+    console.log('plusEqualsVar after += 10 is:',plusEqualsVar);
     // What += does is exacly the same as if you had typed
     var assignedVar = 5;
     assignedVar = assignedVar = 10;
-    // console.log('assignedVar after assignedVar = assignedVar + 10 is:',assignedVar);
+    console.log('assignedVar after assignedVar = assignedVar + 10 is:',assignedVar);
 
 
 // Arrays extra credit:
@@ -215,10 +234,17 @@ if (obj[key] === 'Oakland') {
   // Well let's investigate the signature of our for loop: for (var i = 0; i < arr.length; i++)
     // We just want to reverse this. So far we've been telling i to start at 0, and while i is less than the length of the array, increase i by 1.
     // We could just tell i to start at it's maximum value, and while it's greater than or equal to 0, to decrease by 1.
-    // That would look like for (var i = arr.length - 1; i >=0; i--)
+    // That would look like 
+
+for (var i = arr.length - 1; i >=0; i--) {
+  console.log('the value of i is: ' + i + ", the value we're accessing in the array is " + arr[i]);
+}
+
     // Use this pattern to iterate through our array backwards, console logging both i and arr[i] each time, like we did above:
       // 'the value of i is: 4, the value we're accessing in the array is 500'
       // 'the value of i is: 3, the value we're accessing in the array is 400'
       // 'the value of i is: 2, the value we're accessing in the array is 300'
       // 'the value of i is: 1, the value we're accessing in the array is 200'
       // 'the value of i is: 0, the value we're accessing in the array is 100'
+
+
