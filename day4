@@ -70,6 +70,7 @@ add5SideEffect();
   // var sideEffectReturn = add5SideEffect(); 
   // What is sideEffectReturn equal to? Well, it's equal to whatever we're returning from invoking add5SideEffect. Which is nothing, right, since we don't have a return statement?
   // If a function doesn't explicitly return anything with a return statement, JS will help us out by automatically returning undefined for us. All functions therefore return something, even if it's just undefined. 
+
 // 10. Discuss with your partner what a side effect is vs. a returned value. 
   // Talk about how we observe the results of each one. 
   // Talk about what happens when we store (or don't?) the results of a function that has a side effect, vs. what happens when we store the results of a function that has a returned value. 
@@ -81,6 +82,18 @@ add5SideEffect();
 
 // We can return anything we want from a function! 
 // 12. Let's create a function called superPowerAdder, that does a few things:
+
+var superPowerAdder = function(obj) {
+  obj.superPower = 'JS ninja-ing';
+  return obj;
+}
+for (var i = 0; i < grandCouncil.length; i++) {
+  superPowerAdder(grandCouncil[i]);
+
+};
+console.log(grandCouncil);
+
+
   // A. takes in a single object
   // B. adds a superPower property with a value of 'JS ninja-ing'
   // C. Returns that object
@@ -89,7 +102,19 @@ add5SideEffect();
   // Overwrite each object in the grandCouncil array with the respective results of superPowerAdder
   // As always, console.log frequently at various steps along the way to make sure your results are what you're expecting them to be!
 
-// 13. Define a function called animalMaker. This function has three parameters: 
+// 13. Define a function called animalMaker. This function has three parameters:
+
+var animalMaker = function(inputType, inputSuperPower, inputCanFly) {
+  var something = {
+    type: inputType,
+    superPower: inputSuperPower,
+    canFly: inputCanFly,
+    createdBy: 'Kenneth'
+  };
+} ;
+
+var createdAnimal = animalMaker('panda', 'eats leaves', false);
+console.log(createdAnimal);
   // inputType
   // inputSuperPower
   // inputCanFly
