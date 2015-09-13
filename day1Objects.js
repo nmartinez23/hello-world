@@ -2,22 +2,12 @@
 //As you start your JS journey, there's a ton of value in just building out the muscle memory for the fundamentals. 
 //To get these fundamentals as deeply embedded as possible, type them out new each time. Avoid copying code, as you're just ignoring a chance to get in more useful practice. 
 
-// 1. To start, let's create a variable, mysticalAnimal, and set it equal to an object literal. 
+// 1. To start, let's create a variable, mysticalAnimal, and set it equal to an object literal.
 
 // Dot Notation:
 // Recall that dot notation takes whatever is to the right of the dot, turns it into a string, and looks up that string as a property name in the object to the left of the dot. 
 // Let's use dot notation to add some properties to mysticalAnimal.
 // 2. Add a type property, and set it equal to 'dragon'.
-
-var mysticalAnimal = {};
-
-mysticalAnimal.type = 'dragon';
-mysticalAnimal.name = 'Leslie';
-mysticalAnimal.likes = '[]';
-mysticalAnimal.bestFriend = 'Nick';
-mysticalAnimal.superPower = 'gives amazing hugs';
-                     
-
 // 3. Add a name property, and set it equal to 'Leslie'.
 // 4. Add a likes property, and set it equal to an empty array.
 // 5. Add a property called bestFriend, and set it equal to your name. 
@@ -30,12 +20,7 @@ mysticalAnimal.superPower = 'gives amazing hugs';
   // []
   // your own name
   // 'gives amazing hugs'
-console.log(mysticalAnimal.type, mysticalAnimal.name, mysticalAnimal.likes);
-
-
-
 // Hopefully this starts to feel somewhat repetitive- that's awesome! That means that you're learing this super well so far. If it doesn't, try going back and doing it again on your own time. 
-
 
 // Bracket notation:
 // Recall that we can do two different things with bracket notation:
@@ -44,16 +29,7 @@ console.log(mysticalAnimal.type, mysticalAnimal.name, mysticalAnimal.likes);
 // Remember that bracket notation is the ONLY way to look up variables or expressions when using them with objects. 
 
 // 8. Create a variable called newPropertyToAdd, and set it equal to 'food'. 
-
-var newPropertyToAdd = 'food';
-mysticalAnimal ['newPropertyToAdd'] = 'BBQ';
-
-
 // 9. Now, using bracket notation and newPropertyToAdd, create a food property on our mysticalAnimal object, and set it equal to 'BBQ'. NOTE: you should not be typing the word food to accomplish this task!
-
-newPropertyToAdd = 'canFly';
-console.log(mysticalAnimal[newPropertyToAdd] = true);
-
 // 10. Now set newPropertyToAdd equal to 'canFly'.
 // 11. What do you expect to happen when we type in the following line?
   // mysticalAnimal[newPropertyToAdd] = true; 
@@ -69,9 +45,6 @@ console.log(mysticalAnimal[newPropertyToAdd] = true);
 // Now, onto point B above of using bracket notation- passing in a string. 
 
 // 12. Using bracket notation still, pass in the string 'collects' inside the brackets, and set it equal to the value 'diamonds and gold and fire extinguishers'. 
-
-mysticalAnimal['collects'] = 'diamonds and gold and fire extinguisers';
-
 // At first glance, this appears to be a different pattern than passing in a variable inside the brackets. But let's revisit the same steps we talked through above, and you'll notice that all we did was make one step simpler for the computer. 
 // Now let's talk through what just happened:
   // The JS interpreter reads the line of code from left to right, just as we do. 
@@ -86,20 +59,52 @@ mysticalAnimal['collects'] = 'diamonds and gold and fire extinguisers';
 
 // 13. Create a variable called thisIsAVariable. Set it equal to the string 'superPower'.
 // Let's use this to play with bracket vs. dot notation. 
-
-var thisIsAVariable = 'superPower';
-
 // 14. What do you expect to happen when we try the following line? Talk this through with your partner for a minute. 
-
-console.log(mysticalAnimal.thisIsAVariable);
-
+  // console.log(mysticalAnimal.thisIsAVariable);
   // The dot notation means that JS is going to try to look for a property name that is exactly the string after the dot- in this case, it's looking for a property called thisIsAVariable in our mysticalAnimal object. And clearly we don't have a property named that, so it will return undefined!
 // 15. Now try using thisIsAVariable using the proper form of access for variables. What do you get this time?
-
-
-
 // 16. And what happens when you put that variable in quotes inside the brackets? 
   // It does the exact same thing as if you had used dot notation- looks it up as a string, not a variable. 
+
+  var mysticalAnimal = {};
+
+mysticalAnimal.type = 'dragon';
+mysticalAnimal.name = 'Leslie';
+mysticalAnimal.likes = '[]';
+mysticalAnimal.bestFriend = 'Nick';
+mysticalAnimal.superPower = 'gives amazing hugs';
+
+//console.log(mysticalAnimal['type']);
+//console.log(mysticalAnimal['name']);
+
+var animal = mysticalAnimal.type;  //access
+//console.log(animal);
+var array = mysticalAnimal.likes; 
+//console.log(array); 
+
+var newPropertyToAdd = 'food';
+
+mysticalAnimal ['newPropertyToAdd'] = 'BBQ';
+mysticalAnimal.newPropertyToAdd = 'canFly';
+//console.log(mysticalAnimal);
+
+mysticalAnimal['collects'] = 'diamonds and gold and fire extinguishers';
+
+var thisIsAVariable = 'superPower';
+mysticalAnimal ['thisIsAVariable']
+//console.log(mysticalAnimal.thisIsAVariable);
+
+var mysticalAnimal2 = {
+  type: 'dragon',
+  name: 'Leslie',
+  likes: '[]',
+  bestFriend: 'Nick',
+  superPower: 'gives amazing hugs',
+  food: 'BBQ',
+  canFly: true,
+  collects: 'diamonds and gold and fire extinguishers'
+};
+//console.log(mysticalAnimal2.canFly);
 
 // Object Literals:
 // One last practice! So far we've been going through and creating different properties one by one. Let's use object literal notation to do a bunch at once!
@@ -120,16 +125,5 @@ console.log(mysticalAnimal.thisIsAVariable);
   // food
   // canFly
   // collects
-
-var mysticalAnimal2 = {
-type: 'type',
-name: 'name',
-likes: 'likes',
-bestFriend: 'bestFriend',
-superPower: 'superPower',
-  food: 'food',
-  canFly: 'canFly',
-  collects: 'collects'
-};
 
 // Awesome, by now you should have a pretty good familiarity with objects, bracket and dot notation, object literals, and accessing properties of objects. Feel free to keep exploring more on your own; objects are important things to understand!
