@@ -12,12 +12,6 @@
 // Loops:
 
 // We've created an array and an object for you to practice with below.
-var arr = [100,200,300,400,500];
-var obj = {
-  city: 'Oakland',
-  slingsCode: true,
-  excitementLevel: 10
-};
 
 // 1. create a for loop for arrays, to iterate through our arr.
   // Inside the body of the for loop, console log the string 'hi, I'm inside the for loop for arrays!'
@@ -25,10 +19,6 @@ var obj = {
   // This should tell you that the for loop is running 5 times. And all it's doing is running the body of the for loop once on each iteration. There's no magic there.
   // The body of the for loop is just a block of code the same number of times are there are items in the array.
     // If we have 5 items in our array, we will run this block of code 5 times.
-
-for (var i =0; i < arr.length; i++) {
-  //console.log("hi, Im inside the for loop for arrays!");
-}
 
 // 2. Cool, now let's console.log what i is in each iteration.
   // You should see
@@ -38,10 +28,6 @@ for (var i =0; i < arr.length; i++) {
   // 3
   // 4
   // in your console.
-
-for (var i =0; i < arr.length; i++) {
-  //console.log(i);
-}
 
   // All i is is a number. Since arrays are numerically indexed, all we need to access the things stored inside them are numbered indices.
   // Put another way, to access 100, 200, and 300 from arr, all we need are the numbers 0, 1, and 2,
@@ -60,10 +46,6 @@ for (var i =0; i < arr.length; i++) {
   // 400
   // 500
 
-for (var i = 0; i < arr.length; i++) {
-  //console.log(arr[i]);
-}
-
   // Now that you're comfortable accessing each item in arr, let's console log both i and the relevant value stored in arr
     // by writing a new for loop. So what we'd expect to see in our console is:
     // 'the value of i is: 0, the value we're accessing in the array is 100'
@@ -71,19 +53,11 @@ for (var i = 0; i < arr.length; i++) {
     // 'the value of i is: 2, the value we're accessing in the array is 300'
     // 'the value of i is: 3, the value we're accessing in the array is 400'
     // 'the value of i is: 4, the value we're accessing in the array is 500'
-
-for (var i=0; i <arr.length; i++) {
-  //console.log("the value of i is:" + i + " the value we're accessing in the array is " + arr[i]);
-}
-
+    
 // 4. Great! Now you've figured out that i is just a number we can use to access each item in the array, one per iteration.
   // Now let's use a new for loop to modify the array. Let's add 1 to each item in arr.
   // Now that you've added 1 to each item in arr, console.log it to see the results.
     // We expect to see [101, 201, 301, 401, 501]
-
-for (var i = 0; i < arr.length; i++) {
-  //console.log(arr[i] + 1);
-}
 
   // Have some fun doing this a few more times. Try multiplying each item in arr by some number. Then try dividing it by some number.
     // Write entirely new for loops each time, don't just change the '+' to a '/'.
@@ -96,35 +70,68 @@ for (var i = 0; i < arr.length; i++) {
   // You should see this pop up 3 times in your console.
   // This should tell you that the for loop for our object is running 3 times. And, much like our array for loop,
     // all it's doing is running the body of the for loop once on each iteration.
-
-for (var key in obj) {
-  //console.log("hi, im inside the for loop for objects!");
-}
-
+    
 // 6. Now let's check out what key is on each iteration.
   // If you console.log the key in the for loop body, you should see
   // 'city'
   // 'slingsCode'
   // 'excitementLevel'
-  // in your console.
-
-for (var key in obj) {
-  //console.log(key);
-}
-
+  // in your console
+  
   // key is just a variable, that is set equal to each of the keys in our object one at a time.
     // Just as i is a varaible that is set equal to each of the numerical indices of our arr.
   // Just for fun, let's create an empty array outside of our for loop called arrayOfKeys.
     // On each iteration, let's push the key into this arrayOfKeys. After your for loop, console.log the arrayOfKeys.
     // You should see ['city', 'slingsCode', 'excitementLevel']. Note that they may not be in this order,
     // since we can't guarantee the order that an object's keys are in.
+    
+         var arr = [100,200,300,400,500];
+var obj = {
+  city: 'Oakland',
+  slingsCode: true,
+  excitementLevel: 10
+};
 
-arrayOfKeys = [];
+for (var i =0; i < arr.length; i++) {
+ 
+  //console.log("hi, Im inside the for loop for arrays!");
+ 
+  //console.log(i);
+
+//console.log(arr[i]);
+
+  //console.log("the value of i is:" + i + " the value we're accessing in the array is " + arr[i]);
+}
+
+for (var i = 0; i < arr.length; i++) {
+ // console.log(arr[i] + 1);
+}
+
+for (var i =0; i < arr.length; i++) {
+  //console.log(arr[i] * 2);
+}
+for (var i = 0; i < arr.length; i++) {
+  //console.log(arr[i] / 3);
+}
+
+for (var key in obj) {
+ // console.log("hi, i'm inside the for loop for objects!");
+}
+
+for (var key in obj) {
+ // console.log(key);
+}
+
+arrayOfKeys = []
 for (var key in obj) {
   arrayOfKeys.push(key);
 }
 //console.log(arrayOfKeys);
 
+ for (var key in obj) {
+  var value = obj[key];
+  //console.log(value);
+  }
 
 // 7. Ok, now that we've figured out that key is just a variable that will be set equal to the name of each property in obj,
   // let's use that to access the values stored in obj.
@@ -133,12 +140,7 @@ for (var key in obj) {
   // 'Oakland'
   // true
   // 10
-
-for (var key in obj) {
-  var value = obj[key];
- // console.log(value);
-}
-
+  
   // Now that you're comfortable accessing each value in obj, let's console log both key and the relevant value stored in obj.
   // So what we'd expect to see in our console is:
     // 'the value of key is: city, the value we're accessing in the object is Oakland'
