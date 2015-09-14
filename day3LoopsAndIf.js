@@ -84,8 +84,22 @@
     // On each iteration, let's push the key into this arrayOfKeys. After your for loop, console.log the arrayOfKeys.
     // You should see ['city', 'slingsCode', 'excitementLevel']. Note that they may not be in this order,
     // since we can't guarantee the order that an object's keys are in.
-    
-         var arr = [100,200,300,400,500];
+
+// 7. Ok, now that we've figured out that key is just a variable that will be set equal to the name of each property in obj,
+  // let's use that to access the values stored in obj.
+  // Write a new for loop to iterate through obj, console logging each value to the console.
+  // We'd expect to see
+  // 'Oakland'
+  // true
+  // 10
+  
+  // Now that you're comfortable accessing each value in obj, let's console log both key and the relevant value stored in obj.
+  // So what we'd expect to see in our console is:
+    // 'the value of key is: city, the value we're accessing in the object is Oakland'
+    // 'the value of key is: slingsCode, the value we're accessing in the object is true'
+    // 'the value of key is: excitementLevel, the value we're accessing in the object is 10'
+
+ var arr = [100,200,300,400,500];
 var obj = {
   city: 'Oakland',
   slingsCode: true,
@@ -133,46 +147,14 @@ for (var key in obj) {
   //console.log(value);
   }
 
-// 7. Ok, now that we've figured out that key is just a variable that will be set equal to the name of each property in obj,
-  // let's use that to access the values stored in obj.
-  // Write a new for loop to iterate through obj, console logging each value to the console.
-  // We'd expect to see
-  // 'Oakland'
-  // true
-  // 10
-  
-  // Now that you're comfortable accessing each value in obj, let's console log both key and the relevant value stored in obj.
-  // So what we'd expect to see in our console is:
-    // 'the value of key is: city, the value we're accessing in the object is Oakland'
-    // 'the value of key is: slingsCode, the value we're accessing in the object is true'
-    // 'the value of key is: excitementLevel, the value we're accessing in the object is 10'
-
-
-
 for( var key in obj ) {
-  //console.log("the value of key is: " + key +  ", the value were accessing in the object is " + obj[key]);
+ // console.log("the value of key is: " + key +  ", the value were accessing in the object is " + obj[key]);
 }
-
-// 8. You should be feeling pretty great about iterating through objects now!
-  // So let's combine this with our if statement.
-  // Let's only log a value to the console if it equals 'Oakland'.
 
 for( var key in obj ) {
  if (obj[key] === 'Oakland')
-  console.log(obj[key]);
+ // console.log(obj[key]);
 } 
-
-  // Great! Now, let's create a new for loop for arr. Inside that for loop, let's only console.log a value
-    // if it is both greater than 100 and less than 400
-    // Remember that we use && for and statements.
-  // Inside another for loop for arr, only console.log the values that are either above 400, or less than 200.
-
-//var arr = [100,200,300,400,500];
-//var obj = {
-  //city: 'Oakland',
-  //slingsCode: true,
-  //excitementLevel: 10
-//};
 
 for (var i = 0; i < arr.length; i++) {
   if (arr[i] > 100 && arr[i] < 400)
@@ -183,6 +165,31 @@ for (var i = 0; i < arr.length; i++) {
   if (arr[i] > 400 || arr[i] < 200)
     console.log(arr[i]);
 }
+
+for (var i = 0; i < arr.length; i++) {
+ if (arr[i]) {
+   console.log(arr[i]);
+ }
+}
+
+for (var i = 0; i < arr.length; i++) {
+  if(0) {
+    console.log(arr[i]);
+  }
+}
+
+for (var i = arr.length - 1; i >=0; i--) {
+  console.log('the value of i is: ' + i + ", the value we're accessing in the array is " + arr[i]);
+}
+
+// 8. You should be feeling pretty great about iterating through objects now!
+  // So let's combine this with our if statement.
+  // Let's only log a value to the console if it equals 'Oakland'.
+
+  // Great! Now, let's create a new for loop for arr. Inside that for loop, let's only console.log a value
+    // if it is both greater than 100 and less than 400
+    // Remember that we use && for and statements.
+  // Inside another for loop for arr, only console.log the values that are either above 400, or less than 200.
 
     // Remember that we use || for or statements.
 // 9. Now let's combine an if statement with our array for loop.
@@ -238,9 +245,7 @@ for (var i = 0; i < arr.length; i++) {
     // We could just tell i to start at it's maximum value, and while it's greater than or equal to 0, to decrease by 1.
     // That would look like 
 
-for (var i = arr.length - 1; i >=0; i--) {
-  console.log('the value of i is: ' + i + ", the value we're accessing in the array is " + arr[i]);
-}
+
 
     // Use this pattern to iterate through our array backwards, console logging both i and arr[i] each time, like we did above:
       // 'the value of i is: 4, the value we're accessing in the array is 500'
